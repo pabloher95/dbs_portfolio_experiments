@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --dark: #0f172a;
+    --gray: #334155;
+    --light-gray: #f1f5f9;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--dark);
+    background: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+}
+
+.gallery-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card.active {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+}
+
+.card.active:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.4);
+}
+
+.card.locked {
+    background: var(--white);
+    color: #94a3b8;
+    border: 2px dashed #cbd5e1;
+    cursor: default;
+}
+
+.version {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-header h1 {
+        font-size: 1.5rem;
+    }
+}

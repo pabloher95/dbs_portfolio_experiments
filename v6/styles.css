@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --jungle-dark: #0b2e13;
+    --jungle-mid: #1a4d2e;
+    --jungle-light: #2d8a4e;
+    --canopy: #45c468;
+    --lime: #8bef57;
+    --sky: #1b0a3c;
+    --flower-pink: #ff6b97;
+    --flower-orange: #ffa53e;
+    --flower-yellow: #ffe63e;
+    --water: #3ecbff;
+    --sand: #f5e6c4;
+    --bark: #5c3a1e;
+    --white: #f0ffe0;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: var(--sky);
+    color: var(--white);
+    line-height: 2;
+    font-size: 10px;
+    position: relative;
+    overflow-x: hidden;
+    image-rendering: pixelated;
+}
+
+/* Vine decorations */
+.vines-left, .vines-right {
+    position: fixed;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.vines-left {
+    left: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        var(--jungle-dark) 0px,
+        var(--jungle-mid) 20px,
+        var(--canopy) 25px,
+        var(--jungle-mid) 30px,
+        var(--jungle-dark) 50px
+    );
+    opacity: 0.5;
+}
+
+.vines-right {
+    right: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        var(--jungle-mid) 0px,
+        var(--jungle-dark) 15px,
+        var(--canopy) 22px,
+        var(--jungle-dark) 30px,
+        var(--jungle-mid) 50px
+    );
+    opacity: 0.5;
+}
+
+/* Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--jungle-dark);
+    border-bottom: 4px solid var(--canopy);
+    padding: 0.75rem 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--lime);
+    text-decoration: none;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+    padding: 0.25rem 0.5rem;
+}
+
+nav a:hover {
+    color: var(--flower-yellow);
+    background: rgba(255, 230, 62, 0.1);
+}
+
+.pixel-leaf {
+    color: var(--canopy);
+    font-size: 10px;
+    animation: leaf-sway 2s ease-in-out infinite alternate;
+}
+
+@keyframes leaf-sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* Blink cursor */
+.blink-cursor {
+    animation: blink 0.8s step-end infinite;
+    color: var(--lime);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Hero */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem 3rem;
+    background:
+        linear-gradient(180deg,
+            var(--sky) 0%,
+            #1a1245 30%,
+            var(--jungle-dark) 70%,
+            #051a09 100%
+        );
+}
+
+.pixel-parrot pre {
+    color: var(--flower-orange);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.title-bar {
+    font-size: 8px;
+    color: var(--flower-yellow);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+}
+
+#hero h1 {
+    font-size: clamp(16px, 4vw, 28px);
+    color: var(--lime);
+    text-shadow: 3px 3px 0 var(--jungle-dark), -1px -1px 0 var(--canopy);
+    line-height: 2.2;
+    margin-bottom: 1.5rem;
+}
+
+.class-label {
+    font-size: 8px;
+    color: var(--canopy);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+/* HP / XP bars */
+.hp-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hp-label {
+    font-size: 8px;
+    color: var(--flower-yellow);
+    width: 2rem;
+    text-align: right;
+}
+
+.bar-track {
+    width: 120px;
+    height: 14px;
+    background: var(--jungle-dark);
+    border: 2px solid var(--canopy);
+}
+
+.bar-fill {
+    height: 100%;
+}
+
+.hp-fill {
+    width: 88%;
+    background: var(--flower-pink);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+}
+
+.xp-fill {
+    width: 72%;
+    background: var(--water);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+}
+
+/* Jungle divider */
+.jungle-divider {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 12px;
+    color: var(--canopy);
+    letter-spacing: 0.3em;
+    opacity: 0.6;
+}
+
+/* Sections */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 2.5rem;
+}
+
+section h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--flower-yellow);
+    text-shadow: 2px 2px 0 var(--jungle-dark);
+}
+
+/* Dialog box */
+.dialog-box {
+    background: var(--jungle-dark);
+    border: 4px solid var(--canopy);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.dialog-box::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--canopy);
+}
+
+.npc-name {
+    color: var(--flower-orange);
+    font-size: 9px;
+    margin-bottom: 0.75rem;
+}
+
+.dialog-box p:not(.npc-name) {
+    font-size: 9px;
+    color: var(--white);
+    line-height: 2.2;
+}
+
+.dialog-continue {
+    margin-top: 1rem;
+    font-size: 8px;
+    color: var(--lime);
+    animation: blink 1.2s step-end infinite;
+}
+
+/* Quest cards */
+.quest-card {
+    background: var(--jungle-dark);
+    border: 3px solid var(--jungle-mid);
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+}
+
+.quest-card:hover {
+    border-color: var(--canopy);
+}
+
+.quest-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.quest-icon {
+    color: var(--flower-yellow);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.quest-header h3 {
+    font-size: 10px;
+    color: var(--lime);
+    line-height: 1.8;
+}
+
+.quest-role {
+    font-size: 8px;
+    color: var(--canopy);
+    margin-top: 0.25rem;
+}
+
+.quest-reward {
+    margin-left: auto;
+    font-size: 8px;
+    color: var(--flower-yellow);
+    flex-shrink: 0;
+    white-space: nowrap;
+    border: 2px solid var(--flower-yellow);
+    padding: 0.25rem 0.5rem;
+}
+
+.quest-log {
+    list-style: none;
+}
+
+.quest-log li {
+    font-size: 8px;
+    color: var(--sand);
+    padding: 0.25rem 0;
+    line-height: 2;
+    border-bottom: 1px solid rgba(45, 138, 78, 0.2);
+}
+
+.quest-log li:last-child {
+    border-bottom: none;
+}
+
+/* Loot */
+.loot-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.loot-item {
+    padding: 1.25rem;
+    border: 3px solid;
+}
+
+.loot-item.legendary {
+    border-color: var(--flower-yellow);
+    background: rgba(255, 230, 62, 0.05);
+}
+
+.loot-item.epic {
+    border-color: var(--flower-pink);
+    background: rgba(255, 107, 151, 0.05);
+}
+
+.loot-rarity {
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.legendary .loot-rarity { color: var(--flower-yellow); }
+.epic .loot-rarity { color: var(--flower-pink); }
+
+.loot-item h3 {
+    font-size: 10px;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.loot-item p {
+    font-size: 8px;
+    color: var(--sand);
+    line-height: 2;
+}
+
+/* Skill tree */
+.skill-tree {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skill-branch h4 {
+    font-size: 9px;
+    color: var(--flower-orange);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.skill-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.skill-node {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 8px;
+}
+
+.node-name {
+    width: 6rem;
+    flex-shrink: 0;
+    color: var(--lime);
+}
+
+.node-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--jungle-dark);
+    border: 2px solid var(--jungle-mid);
+}
+
+.node-fill {
+    height: 100%;
+    background: var(--canopy);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3);
+}
+
+.node-lvl {
+    font-size: 7px;
+    color: var(--flower-yellow);
+    width: 3.5rem;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Contact buttons */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.pixel-btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: var(--jungle-dark);
+    border: 3px solid var(--canopy);
+    color: var(--lime);
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    width: 100%;
+    max-width: 500px;
+}
+
+.pixel-btn:hover {
+    background: var(--jungle-mid);
+    border-color: var(--lime);
+    transform: scale(1.02);
+}
+
+.pixel-btn:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-top: 4px solid var(--canopy);
+    background: var(--jungle-dark);
+}
+
+.game-over {
+    font-size: 12px;
+    color: var(--lime);
+    margin-bottom: 1rem;
+}
+
+footer p:nth-child(2) {
+    font-size: 7px;
+    color: var(--canopy);
+    letter-spacing: 0.05em;
+}
+
+.footer-sub {
+    font-size: 7px;
+    color: var(--flower-yellow);
+    margin-top: 0.75rem;
+    animation: blink 1.5s step-end infinite;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .vines-left, .vines-right {
+        width: 15px;
+    }
+
+    .skill-tree {
+        grid-template-columns: 1fr;
+    }
+
+    .quest-header {
+        flex-wrap: wrap;
+    }
+
+    .quest-reward {
+        margin-left: 0;
+    }
+
+    nav {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 7px;
+    }
+}

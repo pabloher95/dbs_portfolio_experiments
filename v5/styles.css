@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --parchment: #f4ead5;
+    --parchment-dark: #e8d9b8;
+    --ink: #2c1810;
+    --ink-light: #5c3a28;
+    --red: #8b2500;
+    --gold: #8b7531;
+    --accent: #4a3728;
+}
+
+body {
+    font-family: 'IM Fell English', serif;
+    background: var(--parchment);
+    color: var(--ink);
+    line-height: 1.8;
+    position: relative;
+}
+
+/* Parchment texture overlay */
+.parchment-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(139, 117, 49, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(92, 58, 40, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(44, 24, 16, 0.03) 0%, transparent 50%);
+}
+
+/* Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--ink);
+    padding: 0.75rem 2rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--parchment);
+    text-decoration: none;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--parchment-dark);
+}
+
+.nav-sep {
+    color: var(--gold);
+    font-size: 0.7rem;
+}
+
+/* Hero */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.crest {
+    font-size: 4rem;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+#hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 700px;
+    color: var(--ink);
+}
+
+.name-highlight {
+    font-weight: 900;
+    font-style: italic;
+    color: var(--red);
+}
+
+.subtitle {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-top: 1rem;
+    letter-spacing: 0.15em;
+}
+
+.epigraph {
+    font-style: italic;
+    color: var(--ink-light);
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    max-width: 500px;
+}
+
+/* Stage directions */
+.stage-direction {
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Act dividers */
+.act-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ornament {
+    color: var(--red);
+    font-size: 1.25rem;
+    opacity: 0.6;
+}
+
+.divider-line {
+    flex: 1;
+    max-width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ink-light), transparent);
+}
+
+/* Sections */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 2rem 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--red);
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Scroll block (prologue) */
+.scroll-block {
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--ink);
+}
+
+.dropcap {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    color: var(--red);
+}
+
+.aside {
+    font-style: italic;
+    color: var(--ink-light);
+    margin-top: 1rem;
+    padding-left: 2rem;
+    border-left: 2px solid var(--gold);
+}
+
+/* Acts */
+.act {
+    margin-bottom: 2.5rem;
+}
+
+.act h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+}
+
+.act h3 .year {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+}
+
+.act .stage-direction {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.act p:last-child {
+    font-size: 1.02rem;
+}
+
+/* Published Works */
+.works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.work-entry {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.work-numeral {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--red);
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.work-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.work-detail {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    font-style: italic;
+}
+
+/* Skills */
+.skills-scroll {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.skill-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.skill-col ul {
+    list-style: none;
+}
+
+.skill-col li {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px dotted var(--parchment-dark);
+}
+
+.skill-col li em {
+    color: var(--ink-light);
+    font-size: 0.85rem;
+}
+
+/* Contact */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.quill-link {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    transition: background 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.quill-link:hover {
+    background: var(--ink);
+    color: var(--parchment);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--parchment-dark);
+}
+
+footer .stage-direction {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+footer p:last-child {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .skills-scroll {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 0.75rem;
+    }
+
+    .quill-link {
+        width: 100%;
+        max-width: 340px;
+    }
+}
