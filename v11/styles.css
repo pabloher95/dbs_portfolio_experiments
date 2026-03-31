@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --washi: #f2ece0;
+    --washi-dark: #e0d5c0;
+    --ink: #2a2520;
+    --ink-light: #5a5248;
+    --indigo: #2d4a6e;
+    --indigo-light: #7a9bb5;
+    --vermillion: #c0452a;
+    --pine: #5a7a5a;
+    --pine-dim: rgba(90, 122, 90, 0.15);
+    --ochre: #b8963a;
+    --sky: #d5dfe8;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--washi);
+    color: var(--ink);
+    line-height: 1.9;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Washi texture */
+.washi-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(42, 37, 32, 0.02) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(42, 37, 32, 0.03) 0%, transparent 40%),
+        radial-gradient(ellipse at 10% 80%, rgba(184, 150, 58, 0.02) 0%, transparent 30%);
+}
+
+/* Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--indigo);
+    padding: 0.5rem 2rem;
+    border-bottom: 3px solid var(--ochre);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+nav a {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--washi-dark);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--ochre);
+}
+
+/* Hero / Scroll */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.scroll-top-rod, .scroll-bottom-rod {
+    width: 340px;
+    max-width: 90%;
+    height: 12px;
+    background: linear-gradient(180deg, #8a7560 0%, #6b5a48 40%, #5a4a38 100%);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(42, 37, 32, 0.2);
+}
+
+.hero-content {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem 0;
+    max-width: 700px;
+}
+
+.vertical-title {
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+}
+
+.vertical-title.right {
+    writing-mode: vertical-lr;
+}
+
+.kanji-accent {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--vermillion);
+    opacity: 0.3;
+    letter-spacing: 0.5em;
+}
+
+.hero-center {
+    text-align: center;
+    flex: 1;
+}
+
+.series-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    color: var(--indigo-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+
+.series-sub {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+#hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.name-brush {
+    font-weight: 600;
+    color: var(--indigo);
+    font-size: 1.15em;
+}
+
+.hero-role {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    letter-spacing: 0.15em;
+    margin-top: 1rem;
+}
+
+.hero-poem {
+    margin-top: 2.5rem;
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: 1rem;
+    line-height: 2;
+}
+
+/* Woodblock dividers */
+.woodblock-divider {
+    text-align: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.wave-pattern svg {
+    width: 100%;
+    max-width: 600px;
+    height: 40px;
+}
+
+.pine-branch {
+    display: flex;
+    justify-content: center;
+}
+
+/* Sections / Stations */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.station {
+    position: relative;
+}
+
+/* Station marker */
+.station-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.marker-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--vermillion);
+    line-height: 1;
+}
+
+.marker-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+}
+
+/* Cartouche (title block) */
+.station-cartouche {
+    display: inline-block;
+    background: var(--indigo);
+    padding: 0.35rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.cartouche-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--washi);
+    text-transform: uppercase;
+}
+
+/* Station body */
+.station-body {
+    padding-left: 1rem;
+    border-left: 2px solid var(--washi-dark);
+}
+
+/* Landscape block (CSS mountains) */
+.landscape-block {
+    height: 100px;
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--washi) 100%);
+    border: 1px solid var(--washi-dark);
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 70px solid var(--indigo);
+    opacity: 0.2;
+}
+
+.mountain.m2 {
+    left: 40%;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 85px solid var(--indigo);
+    opacity: 0.15;
+}
+
+.mountain.m3 {
+    left: 65%;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 55px solid var(--indigo);
+    opacity: 0.25;
+}
+
+/* Manuscript text */
+.manuscript-text p {
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+}
+
+.manuscript-text strong {
+    color: var(--indigo);
+    font-weight: 600;
+}
+
+.manuscript-text em {
+    color: var(--vermillion);
+}
+
+.aside-note {
+    font-style: italic;
+    color: var(--ink-light);
+    padding-left: 1rem;
+    border-left: 2px solid var(--ochre);
+    margin-top: 1rem;
+}
+
+/* Provinces */
+.province {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--washi-dark);
+}
+
+.province:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.province-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.province-seal {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--vermillion);
+    opacity: 0.5;
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+    line-height: 1;
+    padding-top: 0.15rem;
+}
+
+.province h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.province-meta {
+    font-size: 0.8rem;
+    color: var(--indigo-light);
+    font-style: italic;
+    margin-top: 0.15rem;
+}
+
+.province > p {
+    font-size: 0.98rem;
+    margin-left: 3.5rem;
+}
+
+.province em {
+    color: var(--vermillion);
+}
+
+/* Manuscript entries */
+.manuscript-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.manuscript-entry {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.manuscript-scroll {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    color: var(--ochre);
+    opacity: 0.5;
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.manuscript-entry h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.manuscript-entry p {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    font-style: italic;
+}
+
+/* Tools */
+.tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.tool-column h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    color: var(--indigo);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--washi-dark);
+}
+
+.tool-column ul {
+    list-style: none;
+}
+
+.tool-column li {
+    font-size: 0.92rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted var(--washi-dark);
+}
+
+.tool-note {
+    color: var(--ink-light);
+    font-style: italic;
+    font-size: 0.82rem;
+}
+
+/* Contact */
+.contact-scrolls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.scroll-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.65rem 1.5rem;
+    border: 1px solid var(--washi-dark);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.9rem;
+    transition: border-color 0.3s, background 0.3s;
+    width: 100%;
+    max-width: 420px;
+}
+
+.scroll-link:hover {
+    border-color: var(--indigo);
+    background: rgba(45, 74, 110, 0.04);
+}
+
+.scroll-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5rem;
+    color: var(--vermillion);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* Colophon */
+.colophon {
+    text-align: center;
+    border-left: none;
+}
+
+.colophon p {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.colophon-seal {
+    font-family: 'Noto Serif JP', serif;
+    font-style: normal !important;
+    font-size: 1.1rem;
+    color: var(--vermillion);
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-wave {
+    margin-bottom: 1.5rem;
+}
+
+.footer-wave svg {
+    width: 100%;
+    max-width: 400px;
+    height: 30px;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+}
+
+.footer-sub {
+    font-family: 'Noto Serif JP', serif;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--indigo-light);
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vertical-title {
+        writing-mode: horizontal-tb;
+    }
+
+    .vertical-title.right {
+        writing-mode: horizontal-tb;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .province > p {
+        margin-left: 0;
+    }
+
+    .province-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+}

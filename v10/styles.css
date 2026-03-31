@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --near-black: #111111;
+    --dark: #1a1a1a;
+    --panel: #141414;
+    --mid: #222222;
+    --gray: #555555;
+    --light: #999999;
+    --white: #e8e8e8;
+    --blood: #cc2222;
+    --blood-dim: rgba(204, 34, 34, 0.15);
+    --yellow: #ccaa33;
+    --yellow-dim: rgba(204, 170, 51, 0.1);
+}
+
+body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+/* Rain effect */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(180deg, transparent 95%, rgba(255,255,255,0.03) 95%, rgba(255,255,255,0.03) 95.5%, transparent 95.5%),
+        linear-gradient(180deg, transparent 92%, rgba(255,255,255,0.02) 92%, rgba(255,255,255,0.02) 92.3%, transparent 92.3%);
+    background-size: 3px 80px, 7px 120px;
+    animation: rain-fall 0.8s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes rain-fall {
+    0% { background-position: 0 0, 3px 0; }
+    100% { background-position: 0 80px, 3px 120px; }
+}
+
+/* Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 2px solid var(--blood);
+    padding: 0.6rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+nav a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--blood);
+}
+
+/* Cover */
+#cover {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cover-panel {
+    text-align: center;
+    max-width: 700px;
+}
+
+.series-tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--gray);
+    margin-bottom: 3rem;
+}
+
+/* Silhouette */
+.cover-silhouette {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    margin: 0 auto 3rem;
+}
+
+.silhouette-body {
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    clip-path: polygon(
+        35% 0%, 65% 0%,
+        65% 5%, 70% 5%, 70% 8%, 65% 8%,
+        68% 12%, 70% 20%, 68% 28%,
+        80% 35%, 85% 45%, 82% 55%,
+        75% 55%, 70% 50%, 65% 55%,
+        65% 100%, 55% 100%,
+        55% 55%, 50% 52%, 45% 55%,
+        45% 100%, 35% 100%,
+        35% 55%, 25% 55%, 18% 45%,
+        20% 35%, 32% 28%,
+        30% 20%, 32% 12%,
+        35% 8%, 30% 8%, 30% 5%, 35% 5%
+    );
+    opacity: 0.9;
+}
+
+.silhouette-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(204, 34, 34, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+#cover h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-shadow: 0 0 60px rgba(204, 34, 34, 0.1);
+}
+
+.cover-tagline {
+    font-style: italic;
+    color: var(--blood);
+    font-size: 1rem;
+    margin: 2rem 0 1.5rem;
+}
+
+.cover-meta {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+}
+
+.cover-meta .bullet {
+    margin: 0 0.75rem;
+    color: var(--blood);
+}
+
+/* Panel system */
+.panel {
+    border: 2px solid var(--mid);
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-dark {
+    background: var(--near-black);
+}
+
+.panel-mid {
+    background: var(--dark);
+}
+
+.panel-accent {
+    background: var(--near-black);
+    border-color: var(--blood);
+}
+
+/* Panel grids */
+.panel-grid {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.grid-intro {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.grid-intro .panel-wide {
+    grid-column: 1 / -1;
+}
+
+.grid-cases {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-files {
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.grid-edu {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Caption */
+.caption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gray);
+    padding: 0.75rem 1rem 0;
+}
+
+/* Narration boxes */
+.narration {
+    padding: 1.5rem;
+}
+
+.narration p {
+    color: var(--light);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.narration.small p {
+    font-size: 0.85rem;
+}
+
+/* Speech bubbles */
+.speech-bubble {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.speech-bubble p {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--mid);
+}
+
+.panel-accent .speech-bubble::after {
+    border-top-color: var(--blood);
+}
+
+/* Chapter titles */
+.chapter-title {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.chapter-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blood);
+    line-height: 1;
+}
+
+.chapter-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--gray);
+}
+
+/* Gutter breaks */
+.gutter-break {
+    text-align: center;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.gutter-line {
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background: var(--mid);
+}
+
+/* Case panels */
+.panel-case {
+    background: var(--near-black);
+    padding: 1.5rem;
+}
+
+.case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.case-badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    border: 1px solid var(--blood);
+    padding: 0.15rem 0.5rem;
+}
+
+.case-date {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--gray);
+}
+
+.panel-case h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+}
+
+.case-role {
+    font-size: 0.8rem;
+    color: var(--blood);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+/* File panels */
+.panel-file {
+    background: var(--near-black);
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    border-left: 3px solid var(--blood);
+    position: relative;
+}
+
+.file-stamp {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--blood);
+    opacity: 0.5;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 1px solid var(--blood);
+    padding: 0.1rem 0.4rem;
+    transform: rotate(3deg);
+}
+
+.panel-file h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.panel-file p {
+    font-size: 0.85rem;
+    color: var(--light);
+    line-height: 1.7;
+}
+
+/* Arsenal */
+.arsenal-panel {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.arsenal-panel > .narration {
+    border-bottom: 1px solid var(--mid);
+}
+
+.arsenal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+}
+
+.arsenal-col {
+    padding: 1.25rem 1.5rem;
+    border-right: 1px solid var(--mid);
+}
+
+.arsenal-col:last-child {
+    border-right: none;
+}
+
+.arsenal-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--mid);
+}
+
+.arsenal-col ul {
+    list-style: none;
+}
+
+.arsenal-col li {
+    font-size: 0.85rem;
+    color: var(--light);
+    padding: 0.2rem 0;
+    line-height: 1.6;
+}
+
+.arsenal-col .dim {
+    color: var(--gray);
+    font-size: 0.75rem;
+}
+
+/* Education */
+.edu-panel {
+    padding: 1.5rem;
+}
+
+.edu-school {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--white) !important;
+    margin-bottom: 0.25rem;
+}
+
+.edu-degree {
+    color: var(--blood) !important;
+    font-style: italic;
+    font-size: 0.9rem !important;
+}
+
+.edu-date {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.15em;
+    color: var(--gray) !important;
+    margin-top: 0.5rem;
+}
+
+.edu-note {
+    font-size: 0.8rem !important;
+    color: var(--gray) !important;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Contact / Dead Drop */
+.contact-panel {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.dead-drop-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.dead-drop-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--mid);
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+.dead-drop-links a:last-child {
+    border-bottom: none;
+}
+
+.dead-drop-links a:hover {
+    border-color: var(--blood);
+}
+
+.drop-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+}
+
+.drop-value {
+    font-size: 0.85rem;
+    color: var(--light);
+    transition: color 0.2s;
+}
+
+.dead-drop-links a:hover .drop-value {
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+}
+
+.footer-bar {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-top: 2px solid var(--blood);
+}
+
+.closing-narration {
+    font-style: italic;
+    color: var(--gray);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    color: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .grid-intro,
+    .grid-cases,
+    .grid-edu {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-intro .panel-wide {
+        grid-column: 1;
+    }
+
+    .arsenal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arsenal-col {
+        border-right: none;
+        border-bottom: 1px solid var(--mid);
+    }
+
+    .arsenal-col:last-child {
+        border-bottom: none;
+    }
+
+    #cover h1 {
+        font-size: 3rem;
+    }
+
+    .footer-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .dead-drop-links a {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}

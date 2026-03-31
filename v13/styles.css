@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d0;
+    --warm-white: #faf8f4;
+    --rust: #b85c38;
+    --rust-light: #d4886a;
+    --forest: #4a6b5a;
+    --forest-light: #6a9a7e;
+    --mustard: #c9a84c;
+    --mustard-light: #e0c878;
+    --slate: #5a6068;
+    --ink: #2a2824;
+    --ink-light: #5a5650;
+    --border: #d0c8b8;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream-dark);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Frame */
+.frame-outer {
+    background: var(--ink);
+    padding: 6px;
+    max-width: 860px;
+    width: 100%;
+}
+
+.frame-inner {
+    background: var(--cream);
+    padding: 2.5rem;
+}
+
+/* Header */
+header {
+    margin-bottom: 2.5rem;
+}
+
+.header-line {
+    height: 2px;
+    background: var(--ink);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0.75rem 0;
+}
+
+nav a {
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--rust);
+}
+
+/* Hero */
+#hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Badge */
+.hero-badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.badge-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--warm-white);
+}
+
+.badge-initials {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: 0.1em;
+}
+
+/* Placard */
+.hero-placard {
+    margin-bottom: 2rem;
+}
+
+.placard-pre {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--ink-light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+#hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.placard-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--rust);
+    margin: 1rem auto;
+}
+
+.placard-role {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+
+.placard-locations {
+    font-size: 0.8rem;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+}
+
+/* Hero color grid */
+.hero-grid {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 2rem;
+}
+
+.grid-block {
+    width: 40px;
+    height: 8px;
+}
+
+.grid-block.rust, .rust { background: var(--rust); }
+.grid-block.cream { background: var(--cream-dark); }
+.grid-block.forest, .forest { background: var(--forest); }
+.grid-block.mustard, .mustard { background: var(--mustard); }
+.slate { background: var(--slate); }
+
+/* Chapter dividers */
+.chapter-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.divider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink);
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+}
+
+/* Chapter headers */
+.chapter-header {
+    margin-bottom: 1.5rem;
+}
+
+.chapter-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rust);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: var(--ink);
+}
+
+/* Bio card */
+.bio-card {
+    display: flex;
+    gap: 2rem;
+}
+
+.bio-sidebar {
+    flex-shrink: 0;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.sidebar-block {
+    padding: 0.75rem;
+    color: var(--warm-white);
+}
+
+.sidebar-label {
+    display: block;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.sidebar-value {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.bio-text p {
+    margin-bottom: 0.75rem;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ink);
+}
+
+/* Appointments */
+.appointment-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.appointment {
+    display: flex;
+    gap: 1.25rem;
+    border-left: 4px solid;
+    background: var(--warm-white);
+    padding: 1.25rem 1.5rem;
+}
+
+.rust-border { border-left-color: var(--rust); }
+.forest-border { border-left-color: var(--forest); }
+.mustard-border { border-left-color: var(--mustard); }
+.slate-border { border-left-color: var(--slate); }
+
+.appointment-left {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.appointment-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    color: var(--border);
+    line-height: 1;
+}
+
+.appointment-body h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+}
+
+.appointment-meta {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.appointment ul {
+    list-style: none;
+}
+
+.appointment li {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--ink);
+    padding: 0.2rem 0;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.appointment li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+}
+
+/* Published works cards */
+.works-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.work-card {
+    padding: 1.5rem 1.25rem;
+    color: var(--warm-white);
+}
+
+.rust-bg { background: var(--rust); }
+.forest-bg { background: var(--forest); }
+.mustard-bg { background: var(--mustard); color: var(--ink); }
+
+.work-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.work-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.work-card p {
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Inventory */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+}
+
+.inventory-col {
+    border-right: 1px solid var(--border);
+}
+
+.inventory-col:last-child {
+    border-right: none;
+}
+
+.inventory-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    color: var(--warm-white);
+    text-align: center;
+}
+
+.inventory-col ul {
+    list-style: none;
+    padding: 0.75rem 1rem;
+}
+
+.inventory-col li {
+    font-size: 0.85rem;
+    font-weight: 300;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    color: var(--ink);
+}
+
+.inventory-col li:last-child {
+    border-bottom: none;
+}
+
+/* Correspondence */
+.correspondence-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.corr-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 2px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.corr-card:hover {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.corr-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+}
+
+.corr-value {
+    font-size: 0.82rem;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+}
+
+.footer-rule {
+    height: 2px;
+    background: var(--ink);
+    margin-bottom: 1.5rem;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+}
+
+.footer-copy {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--slate);
+}
+
+/* Footer color blocks */
+.footer-blocks {
+    display: flex;
+    gap: 0;
+}
+
+.fb {
+    flex: 1;
+    height: 8px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    .frame-inner {
+        padding: 1.5rem;
+    }
+
+    .bio-card {
+        flex-direction: column;
+    }
+
+    .bio-sidebar {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .sidebar-block {
+        flex: 1;
+    }
+
+    .works-cards,
+    .inventory-grid,
+    .correspondence-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .inventory-col:last-child {
+        border-bottom: none;
+    }
+
+    .appointment {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+}

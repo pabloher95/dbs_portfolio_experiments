@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specimen: Pablo Hernandez Pedraza &mdash; Genomic Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <header>
+        <div class="header-bar">
+            <span class="lab-id">BIOLAB &mdash; SPECIMEN ANALYSIS</span>
+            <span class="lab-ref">REF: PHP-2026-CAPP</span>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="cell-diagram">
+            <svg viewBox="0 0 500 500" class="cell-svg">
+                <!-- cell membrane -->
+                <ellipse cx="250" cy="250" rx="230" ry="220" fill="none" stroke="#4a8c6f" stroke-width="3" stroke-dasharray="8 4" opacity="0.4"/>
+                <ellipse cx="250" cy="250" rx="220" ry="210" fill="rgba(74,140,111,0.03)" stroke="#4a8c6f" stroke-width="1" opacity="0.3"/>
+
+                <!-- cytoplasm organelles (decorative) -->
+                <ellipse cx="120" cy="160" rx="35" ry="20" fill="none" stroke="#7ab89a" stroke-width="1.5" opacity="0.25" transform="rotate(-20 120 160)"/>
+                <ellipse cx="380" cy="180" rx="28" ry="15" fill="none" stroke="#7ab89a" stroke-width="1.5" opacity="0.25" transform="rotate(15 380 180)"/>
+                <ellipse cx="140" cy="360" rx="30" ry="18" fill="none" stroke="#7ab89a" stroke-width="1.5" opacity="0.2" transform="rotate(10 140 360)"/>
+                <ellipse cx="370" cy="350" rx="25" ry="14" fill="none" stroke="#7ab89a" stroke-width="1.5" opacity="0.2" transform="rotate(-12 370 350)"/>
+
+                <!-- ribosomes -->
+                <circle cx="180" cy="130" r="4" fill="#7ab89a" opacity="0.2"/>
+                <circle cx="320" cy="140" r="3" fill="#7ab89a" opacity="0.2"/>
+                <circle cx="160" cy="300" r="3.5" fill="#7ab89a" opacity="0.2"/>
+                <circle cx="340" cy="310" r="4" fill="#7ab89a" opacity="0.15"/>
+                <circle cx="100" cy="250" r="3" fill="#7ab89a" opacity="0.2"/>
+                <circle cx="400" cy="260" r="3.5" fill="#7ab89a" opacity="0.15"/>
+
+                <!-- nucleus membrane -->
+                <circle cx="250" cy="250" r="105" fill="rgba(58,110,140,0.06)" stroke="#3a6e8c" stroke-width="2.5" opacity="0.5"/>
+                <circle cx="250" cy="250" r="100" fill="none" stroke="#3a6e8c" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+
+                <!-- nucleolus -->
+                <circle cx="250" cy="240" r="28" fill="rgba(140,90,120,0.1)" stroke="#8c5a78" stroke-width="1.5" opacity="0.5"/>
+
+                <!-- chromatin threads -->
+                <path d="M220,210 Q240,200 260,215 Q280,230 260,245 Q240,260 225,250 Q210,235 220,210" fill="none" stroke="#8c5a78" stroke-width="1" opacity="0.3"/>
+                <path d="M240,220 Q270,210 275,240 Q280,270 255,265" fill="none" stroke="#8c5a78" stroke-width="1" opacity="0.25"/>
+            </svg>
+
+            <div class="nucleus-label">
+                <p class="specimen-tag">SPECIMEN</p>
+                <h1>Pablo Hernandez<br>Pedraza</h1>
+                <p class="genome-type">Genome: Data Scientist &amp; Policy Researcher</p>
+            </div>
+        </div>
+
+        <div class="specimen-meta">
+            <div class="meta-item">
+                <span class="meta-label">ORIGIN</span>
+                <span class="meta-value">Bogot&aacute;, Colombia</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">CURRENT HABITAT</span>
+                <span class="meta-value">Chicago, IL</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">PHENOTYPE</span>
+                <span class="meta-value">Bilingual (ES/EN)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">CLASSIFICATION</span>
+                <span class="meta-value">MS CAPP, UChicago Harris</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="dna-divider">
+        <svg viewBox="0 0 800 80" preserveAspectRatio="none" class="dna-svg">
+            <path d="M0,40 Q50,10 100,40 Q150,70 200,40 Q250,10 300,40 Q350,70 400,40 Q450,10 500,40 Q550,70 600,40 Q650,10 700,40 Q750,70 800,40" fill="none" stroke="#4a8c6f" stroke-width="2" opacity="0.4"/>
+            <path d="M0,40 Q50,70 100,40 Q150,10 200,40 Q250,70 300,40 Q350,10 400,40 Q450,70 500,40 Q550,10 600,40 Q650,70 700,40 Q750,10 800,40" fill="none" stroke="#3a6e8c" stroke-width="2" opacity="0.4"/>
+            <!-- base pairs -->
+            <line x1="50" y1="25" x2="50" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="100" y1="38" x2="100" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="150" y1="25" x2="150" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="200" y1="38" x2="200" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="250" y1="25" x2="250" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="300" y1="38" x2="300" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="350" y1="25" x2="350" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="400" y1="38" x2="400" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="450" y1="25" x2="450" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="500" y1="38" x2="500" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="550" y1="25" x2="550" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="600" y1="38" x2="600" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="650" y1="25" x2="650" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="700" y1="38" x2="700" y2="42" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+            <line x1="750" y1="25" x2="750" y2="55" stroke="#8c5a78" stroke-width="1" opacity="0.2"/>
+        </svg>
+    </div>
+
+    <section id="about">
+        <div class="section-label">
+            <span class="label-marker">&#9675;</span>
+            <span>CYTOPLASM &mdash; BIOGRAPHICAL EXTRACT</span>
+        </div>
+        <div class="extract-card">
+            <p>This specimen demonstrates an unusual capacity for transforming raw observational data into interactive analytical instruments. Trained initially in the disciplines of Economics and Anthropology at the Universidad de los Andes (2020), it subsequently migrated to the Harris School of Public Policy at the University of Chicago, where it is developing advanced capabilities in Machine Learning, NLP, LLM Agent construction, and Cloud Computing. The specimen has been observed teaching Python to younger organisms and directing the Data Science Clinic. Bilingual expression confirmed (Spanish/English).</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-label">
+            <span class="label-marker">&#9675;</span>
+            <span>MITOCHONDRIA &mdash; ENERGY PRODUCING FUNCTIONS</span>
+        </div>
+
+        <div class="organelle-stack">
+            <div class="organelle">
+                <div class="organelle-membrane">
+                    <svg viewBox="0 0 60 100" class="mito-svg">
+                        <ellipse cx="30" cy="50" rx="28" ry="48" fill="none" stroke="#4a8c6f" stroke-width="2" opacity="0.4"/>
+                        <path d="M8,30 Q30,20 52,30" fill="none" stroke="#4a8c6f" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,50 Q30,60 52,50" fill="none" stroke="#4a8c6f" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,70 Q30,60 52,70" fill="none" stroke="#4a8c6f" stroke-width="1.5" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="organelle-info">
+                    <h3>NYC Department of Finance</h3>
+                    <p class="organelle-meta">Data Science Graduate Intern &mdash; Summer 2025</p>
+                    <div class="base-pairs">
+                        <div class="pair"><span class="base base-a">A</span><span class="pair-text">Python Dash applications for property valuation modelling from administrative spatial data</span></div>
+                        <div class="pair"><span class="base base-t">T</span><span class="pair-text">Tax-to-income ratio dashboards &mdash; city-wide, borough-level, quantile-specific</span></div>
+                        <div class="pair"><span class="base base-g">G</span><span class="pair-text">CI/CD workflows in GitHub Actions for ESRI geospatial data querying</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="organelle">
+                <div class="organelle-membrane">
+                    <svg viewBox="0 0 60 100" class="mito-svg">
+                        <ellipse cx="30" cy="50" rx="28" ry="48" fill="none" stroke="#3a6e8c" stroke-width="2" opacity="0.4"/>
+                        <path d="M8,25 Q30,15 52,25" fill="none" stroke="#3a6e8c" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,45 Q30,55 52,45" fill="none" stroke="#3a6e8c" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,65 Q30,55 52,65" fill="none" stroke="#3a6e8c" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,80 Q30,85 52,80" fill="none" stroke="#3a6e8c" stroke-width="1.5" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="organelle-info">
+                    <h3>World Bank &mdash; LAC Chief Economist</h3>
+                    <p class="organelle-meta">Research Analyst &mdash; March 2023 &ndash; August 2024</p>
+                    <div class="base-pairs">
+                        <div class="pair"><span class="base base-c">C</span><span class="pair-text">R Shiny application computing non-salary labor costs across 11 LAC countries</span></div>
+                        <div class="pair"><span class="base base-g">G</span><span class="pair-text">Harmonized 11 national household surveys on labor market impacts</span></div>
+                        <div class="pair"><span class="base base-a">A</span><span class="pair-text">Synthesized labor &amp; tax regulations for 11 countries into analytical spreadsheets</span></div>
+                        <div class="pair"><span class="base base-t">T</span><span class="pair-text">Co-authored LCRCE flagship report on competition, trade &amp; antitrust enforcement</span></div>
+                        <div class="pair"><span class="base base-c">C</span><span class="pair-text">Compiled 1,000+ research papers into systematic literature reviews</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="organelle">
+                <div class="organelle-membrane">
+                    <svg viewBox="0 0 60 100" class="mito-svg">
+                        <ellipse cx="30" cy="50" rx="28" ry="48" fill="none" stroke="#8c5a78" stroke-width="2" opacity="0.4"/>
+                        <path d="M8,30 Q30,40 52,30" fill="none" stroke="#8c5a78" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,55 Q30,45 52,55" fill="none" stroke="#8c5a78" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,75 Q30,80 52,75" fill="none" stroke="#8c5a78" stroke-width="1.5" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="organelle-info">
+                    <h3>UNDP &mdash; Economic Researcher</h3>
+                    <p class="organelle-meta">SDG &amp; Development Policy &mdash; April 2022 &ndash; February 2023</p>
+                    <div class="base-pairs">
+                        <div class="pair"><span class="base base-a">A</span><span class="pair-text">R Shiny country report generator for 25 nations via real-time macro data</span></div>
+                        <div class="pair"><span class="base base-g">G</span><span class="pair-text">Led dissemination tools for 22 high-frequency COVID-19 phone surveys</span></div>
+                        <div class="pair"><span class="base base-t">T</span><span class="pair-text">Co-authored UNDP-IDB migration report from 9 RCT interventions</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="organelle">
+                <div class="organelle-membrane">
+                    <svg viewBox="0 0 60 100" class="mito-svg">
+                        <ellipse cx="30" cy="50" rx="28" ry="48" fill="none" stroke="#4a8c6f" stroke-width="2" opacity="0.4"/>
+                        <path d="M8,35 Q30,25 52,35" fill="none" stroke="#4a8c6f" stroke-width="1.5" opacity="0.3"/>
+                        <path d="M8,60 Q30,70 52,60" fill="none" stroke="#4a8c6f" stroke-width="1.5" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="organelle-info">
+                    <h3>UNDP &mdash; Junior Economist</h3>
+                    <p class="organelle-meta">SDG &amp; Development Policy (Remote) &mdash; November 2020 &ndash; March 2022</p>
+                    <div class="base-pairs">
+                        <div class="pair"><span class="base base-c">C</span><span class="pair-text">Analyzed 17 Latinobar&oacute;metro surveys on inequality, fiscal fairness &amp; redistribution</span></div>
+                        <div class="pair"><span class="base base-a">A</span><span class="pair-text">Co-authored Ch.4 of UNDP Regional Human Development Report 2021: &ldquo;Trapped&rdquo;</span></div>
+                        <div class="pair"><span class="base base-g">G</span><span class="pair-text">Harmonized 24 phone surveys in Stata, R &amp; VBA for COVID-19 welfare analysis</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dna-divider">
+        <svg viewBox="0 0 800 80" preserveAspectRatio="none" class="dna-svg">
+            <path d="M0,40 Q50,10 100,40 Q150,70 200,40 Q250,10 300,40 Q350,70 400,40 Q450,10 500,40 Q550,70 600,40 Q650,10 700,40 Q750,70 800,40" fill="none" stroke="#8c5a78" stroke-width="2" opacity="0.3"/>
+            <path d="M0,40 Q50,70 100,40 Q150,10 200,40 Q250,70 300,40 Q350,10 400,40 Q450,70 500,40 Q550,10 600,40 Q650,70 700,40 Q750,10 800,40" fill="none" stroke="#4a8c6f" stroke-width="2" opacity="0.3"/>
+            <line x1="50" y1="25" x2="50" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="150" y1="25" x2="150" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="250" y1="25" x2="250" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="350" y1="25" x2="350" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="450" y1="25" x2="450" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="550" y1="25" x2="550" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="650" y1="25" x2="650" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+            <line x1="750" y1="25" x2="750" y2="55" stroke="#3a6e8c" stroke-width="1" opacity="0.15"/>
+        </svg>
+    </div>
+
+    <section id="publications">
+        <div class="section-label">
+            <span class="label-marker">&#9675;</span>
+            <span>ENDOPLASMIC RETICULUM &mdash; PUBLISHED OUTPUTS</span>
+        </div>
+        <div class="er-folds">
+            <div class="er-fold">
+                <div class="fold-marker base-a">A-T</div>
+                <div>
+                    <h3>LCRCE Flagship Report</h3>
+                    <p>Competition, trade &amp; antitrust enforcement on productivity. World Bank, April 2024.</p>
+                </div>
+            </div>
+            <div class="er-fold">
+                <div class="fold-marker base-c">C-G</div>
+                <div>
+                    <h3>&ldquo;A Better World for the Migrant Population in LAC&rdquo;</h3>
+                    <p>Joint UNDP &amp; IDB. 9 RCT interventions on migration perceptions.</p>
+                </div>
+            </div>
+            <div class="er-fold">
+                <div class="fold-marker base-g">G-C</div>
+                <div>
+                    <h3>&ldquo;Trapped: High Inequality and Low Growth&rdquo;</h3>
+                    <p>Ch.4, UNDP LAC Regional Human Development Report, 2021. Violence &amp; inequality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-label">
+            <span class="label-marker">&#9675;</span>
+            <span>RIBOSOME ARRAY &mdash; PROTEIN SYNTHESIS (SKILLS)</span>
+        </div>
+        <div class="codon-grid">
+            <div class="codon-group">
+                <h4>Coding Sequences</h4>
+                <div class="codons">
+                    <span class="codon c-green">Python</span>
+                    <span class="codon c-blue">R / Shiny</span>
+                    <span class="codon c-green">SQL</span>
+                    <span class="codon c-mauve">Stata</span>
+                    <span class="codon c-blue">JavaScript</span>
+                    <span class="codon c-green">HTML/CSS</span>
+                    <span class="codon c-mauve">LaTeX</span>
+                </div>
+            </div>
+            <div class="codon-group">
+                <h4>Structural Proteins</h4>
+                <div class="codons">
+                    <span class="codon c-blue">Git</span>
+                    <span class="codon c-green">AWS</span>
+                    <span class="codon c-mauve">Docker</span>
+                    <span class="codon c-blue">Kubernetes</span>
+                    <span class="codon c-green">Terraform</span>
+                    <span class="codon c-mauve">GitHub Actions</span>
+                </div>
+            </div>
+            <div class="codon-group">
+                <h4>Regulatory Elements</h4>
+                <div class="codons">
+                    <span class="codon c-green">Neural Networks</span>
+                    <span class="codon c-blue">NLP</span>
+                    <span class="codon c-mauve">GPT / BERT</span>
+                    <span class="codon c-green">LLM Agents</span>
+                    <span class="codon c-blue">Decision Modelling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dna-divider">
+        <svg viewBox="0 0 800 80" preserveAspectRatio="none" class="dna-svg">
+            <path d="M0,40 Q50,10 100,40 Q150,70 200,40 Q250,10 300,40 Q350,70 400,40 Q450,10 500,40 Q550,70 600,40 Q650,10 700,40 Q750,70 800,40" fill="none" stroke="#3a6e8c" stroke-width="2" opacity="0.3"/>
+            <path d="M0,40 Q50,70 100,40 Q150,10 200,40 Q250,70 300,40 Q350,10 400,40 Q450,70 500,40 Q550,10 600,40 Q650,70 700,40 Q750,10 800,40" fill="none" stroke="#8c5a78" stroke-width="2" opacity="0.3"/>
+        </svg>
+    </div>
+
+    <section id="contact">
+        <div class="section-label">
+            <span class="label-marker">&#9675;</span>
+            <span>CELL MEMBRANE &mdash; SIGNAL RECEPTORS</span>
+        </div>
+        <div class="receptor-links">
+            <a href="mailto:hernandezpablo1995@gmail.com" class="receptor">
+                <span class="receptor-type">Ligand: Email</span>
+                <span class="receptor-target">hernandezpablo1995@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/pablohernandezp/" class="receptor">
+                <span class="receptor-type">Ligand: Network</span>
+                <span class="receptor-target">linkedin.com/in/pablohernandezp</span>
+            </a>
+            <a href="https://github.com/pabloher95" class="receptor">
+                <span class="receptor-type">Ligand: Repository</span>
+                <span class="receptor-target">github.com/pabloher95</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-note">Specimen analysis concluded. All observations recorded under standard laboratory conditions.</p>
+        <p>&copy; 2026 Pablo Hernandez Pedraza &mdash; All sequences reserved</p>
+    </footer>
+
+</body>
+</html>
